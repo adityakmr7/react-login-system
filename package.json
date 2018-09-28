@@ -34,5 +34,6 @@
     "eslint-plugin-react": "^7.11.0",
     "prettier": "^1.14.2",
     "redux-devtools-extension": "^2.13.5"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }

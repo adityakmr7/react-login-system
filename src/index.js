@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import 'semantic-ui-css/semantic.min.css';
 import './index.css';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import {createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
@@ -20,7 +20,7 @@ const store = createStore(
 ReactDOM.render(
 <BrowserRouter>
   <Provider store= { store }>
-    <App />
+    <Route component={App} />
   </Provider>
 </BrowserRouter>
   , document.getElementById('root'));

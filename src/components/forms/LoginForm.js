@@ -1,5 +1,5 @@
 import React from "react";
-import {Form, Button} from 'semantic-ui-react';
+import {Form, Button, Message} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import InlineError from '../messages/InlineError';
 import isEmail from 'validator/lib/isEmail';
@@ -37,6 +37,12 @@ class LoginForm extends React.Component {
     const {data, errors} = this.state;
     return (
       <Form onSubmit={this.onSubmit}>
+        {errors.global && (
+          <Message negative>
+            <Message.Header>Something Went Wrong</Message.Header>
+            <p>{errors.global}</p>
+          </Message>
+        )}
         <Form.Field error={!!errors.email}>
           <label htmlFor="Email">Email</label>
           <input
